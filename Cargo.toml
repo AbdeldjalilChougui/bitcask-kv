@@ -1,0 +1,22 @@
+[package]
+name = "bitcask-kv"
+version = "0.1.0"
+edition = "2021"
+authors = ["Abdeldjalil Chougui"]
+license = "MIT"
+description = "Bitcask-style log-structured key/value store: append-only log, in-memory keydir, merge, hint files, crash recovery"
+
+[[bin]]
+name = "bitcask"
+path = "src/main.rs"
+
+[dependencies]
+crc32fast = "1"
+
+[dev-dependencies]
+tempfile = "3"
+criterion = { version = "0.5", default-features = false }
+
+[[bench]]
+name = "kv"
+harness = false
